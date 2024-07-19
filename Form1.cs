@@ -6,5 +6,12 @@ namespace HMS_Hospital_Managment_System_
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Home H = new Home();
+            H.Show();
+            this.Hide();
+        }
     }
 }
