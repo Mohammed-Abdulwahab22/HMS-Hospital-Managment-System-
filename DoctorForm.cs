@@ -21,5 +21,12 @@ namespace HMS_Hospital_Managment_System_
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Home h = new Home();
+            h.Show();
+            this.Hide();
+        }
     }
 }

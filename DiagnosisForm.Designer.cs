@@ -46,13 +46,13 @@
             dataGridView1 = new DataGridView();
             label3 = new Label();
             panel2 = new Panel();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            label8 = new Label();
-            label9 = new Label();
             pictureBox2 = new PictureBox();
+            label9 = new Label();
+            label8 = new Label();
+            label7 = new Label();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -179,6 +179,7 @@
             button4.TabIndex = 18;
             button4.Text = "Home";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // button3
             // 
@@ -258,65 +259,16 @@
             panel2.Size = new Size(559, 359);
             panel2.TabIndex = 21;
             // 
-            // label4
+            // pictureBox2
             // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.Blue;
-            label4.Location = new Point(94, -3);
-            label4.Name = "label4";
-            label4.Size = new Size(280, 41);
-            label4.TabIndex = 5;
-            label4.Text = "Diagnosis Summary";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.Blue;
-            label5.Location = new Point(21, 74);
-            label5.Name = "label5";
-            label5.Size = new Size(129, 28);
-            label5.TabIndex = 6;
-            label5.Text = "Patient Name";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.BackColor = Color.Transparent;
-            label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.Blue;
-            label6.Location = new Point(310, 74);
-            label6.Name = "label6";
-            label6.Size = new Size(97, 28);
-            label6.TabIndex = 7;
-            label6.Text = "Diagnosis";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.BackColor = Color.Transparent;
-            label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.Blue;
-            label7.Location = new Point(21, 210);
-            label7.Name = "label7";
-            label7.Size = new Size(105, 28);
-            label7.TabIndex = 8;
-            label7.Text = "Symptoms";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.BackColor = Color.Transparent;
-            label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.ForeColor = Color.Blue;
-            label8.Location = new Point(320, 210);
-            label8.Name = "label8";
-            label8.Size = new Size(100, 28);
-            label8.TabIndex = 9;
-            label8.Text = "Medicines";
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(194, 311);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(101, 45);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 11;
+            pictureBox2.TabStop = false;
             // 
             // label9
             // 
@@ -330,16 +282,65 @@
             label9.TabIndex = 10;
             label9.Text = "Date";
             // 
-            // pictureBox2
+            // label8
             // 
-            pictureBox2.BackColor = Color.Transparent;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(194, 311);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(101, 45);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 11;
-            pictureBox2.TabStop = false;
+            label8.AutoSize = true;
+            label8.BackColor = Color.Transparent;
+            label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.Blue;
+            label8.Location = new Point(320, 210);
+            label8.Name = "label8";
+            label8.Size = new Size(100, 28);
+            label8.TabIndex = 9;
+            label8.Text = "Medicines";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.Blue;
+            label7.Location = new Point(21, 210);
+            label7.Name = "label7";
+            label7.Size = new Size(105, 28);
+            label7.TabIndex = 8;
+            label7.Text = "Symptoms";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = Color.Transparent;
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.Blue;
+            label6.Location = new Point(310, 74);
+            label6.Name = "label6";
+            label6.Size = new Size(97, 28);
+            label6.TabIndex = 7;
+            label6.Text = "Diagnosis";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.Blue;
+            label5.Location = new Point(21, 74);
+            label5.Name = "label5";
+            label5.Size = new Size(129, 28);
+            label5.TabIndex = 6;
+            label5.Text = "Patient Name";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.Blue;
+            label4.Location = new Point(94, -3);
+            label4.Name = "label4";
+            label4.Size = new Size(280, 41);
+            label4.TabIndex = 5;
+            label4.Text = "Diagnosis Summary";
             // 
             // DiagnosisForm
             // 
