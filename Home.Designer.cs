@@ -37,10 +37,12 @@
             pictureBox3 = new PictureBox();
             label4 = new Label();
             pictureBox4 = new PictureBox();
+            pictureBox5 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -49,7 +51,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Purple;
-            label1.Location = new Point(12, 9);
+            label1.Location = new Point(119, 9);
             label1.Name = "label1";
             label1.Size = new Size(685, 62);
             label1.TabIndex = 0;
@@ -136,6 +138,17 @@
             pictureBox4.TabStop = false;
             pictureBox4.Click += pictureBox4_Click;
             // 
+            // pictureBox5
+            // 
+            pictureBox5.BackColor = Color.Transparent;
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(12, 12);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(113, 62);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 8;
+            pictureBox5.TabStop = false;
+            // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -143,6 +156,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1011, 657);
+            Controls.Add(pictureBox5);
             Controls.Add(pictureBox4);
             Controls.Add(label4);
             Controls.Add(pictureBox3);
@@ -158,6 +172,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -172,5 +187,6 @@
         private PictureBox pictureBox3;
         private Label label4;
         private PictureBox pictureBox4;
+        private PictureBox pictureBox5;
     }
 }

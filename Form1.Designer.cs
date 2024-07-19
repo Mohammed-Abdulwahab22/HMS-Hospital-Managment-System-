@@ -28,35 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
-            label1 = new Label();
             button1 = new Button();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             label2 = new Label();
+            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.Purple;
-            panel1.Controls.Add(label1);
+            panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(405, 100);
             panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe Print", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.WhiteSmoke;
-            label1.Location = new Point(145, 20);
-            label1.Name = "label1";
-            label1.Size = new Size(116, 64);
-            label1.TabIndex = 0;
-            label1.Text = "HMS";
             // 
             // button1
             // 
@@ -107,6 +98,17 @@
             label2.TabIndex = 4;
             label2.Text = "Clear";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(134, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(125, 76);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 2;
+            pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -122,7 +124,7 @@
             Name = "Form1";
             Text = "Form1";
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -130,10 +132,10 @@
         #endregion
 
         private Panel panel1;
-        private Label label1;
         private Button button1;
         private TextBox textBox1;
         private TextBox textBox2;
         private Label label2;
+        private PictureBox pictureBox1;
     }
 }
