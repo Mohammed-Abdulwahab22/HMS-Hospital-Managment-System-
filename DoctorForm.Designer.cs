@@ -33,11 +33,11 @@
             label2 = new Label();
             pictureBox1 = new PictureBox();
             label1 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            dataGridView1 = new DataGridView();
+            DocId = new TextBox();
+            DocName = new TextBox();
+            DocExp = new TextBox();
+            DocPass = new TextBox();
+            DoctorGV = new DataGridView();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
@@ -45,7 +45,7 @@
             label3 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DoctorGV).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -94,55 +94,55 @@
             label1.TabIndex = 1;
             label1.Text = "Hospital Managment System";
             // 
-            // textBox1
+            // DocId
             // 
-            textBox1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.ForeColor = Color.Purple;
-            textBox1.Location = new Point(54, 165);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(214, 30);
-            textBox1.TabIndex = 1;
-            textBox1.Text = "Doctor Id";
+            DocId.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DocId.ForeColor = Color.Purple;
+            DocId.Location = new Point(54, 165);
+            DocId.Name = "DocId";
+            DocId.Size = new Size(214, 30);
+            DocId.TabIndex = 1;
+            DocId.Text = "Doctor Id";
             // 
-            // textBox2
+            // DocName
             // 
-            textBox2.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.ForeColor = Color.Purple;
-            textBox2.Location = new Point(54, 201);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(214, 30);
-            textBox2.TabIndex = 2;
-            textBox2.Text = "Doctor Name";
+            DocName.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DocName.ForeColor = Color.Purple;
+            DocName.Location = new Point(54, 201);
+            DocName.Name = "DocName";
+            DocName.Size = new Size(214, 30);
+            DocName.TabIndex = 2;
+            DocName.Text = "Doctor Name";
             // 
-            // textBox3
+            // DocExp
             // 
-            textBox3.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.ForeColor = Color.Purple;
-            textBox3.Location = new Point(54, 237);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(214, 30);
-            textBox3.TabIndex = 3;
-            textBox3.Text = "Years Of Experience";
+            DocExp.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DocExp.ForeColor = Color.Purple;
+            DocExp.Location = new Point(54, 237);
+            DocExp.Name = "DocExp";
+            DocExp.Size = new Size(214, 30);
+            DocExp.TabIndex = 3;
+            DocExp.Text = "Years Of Experience";
             // 
-            // textBox4
+            // DocPass
             // 
-            textBox4.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox4.ForeColor = Color.Purple;
-            textBox4.Location = new Point(54, 304);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(214, 30);
-            textBox4.TabIndex = 4;
-            textBox4.Text = "Password";
+            DocPass.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DocPass.ForeColor = Color.Purple;
+            DocPass.Location = new Point(54, 304);
+            DocPass.Name = "DocPass";
+            DocPass.Size = new Size(214, 30);
+            DocPass.TabIndex = 4;
+            DocPass.Text = "Password";
             // 
-            // dataGridView1
+            // DoctorGV
             // 
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(462, 201);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(499, 420);
-            dataGridView1.TabIndex = 5;
+            DoctorGV.BackgroundColor = Color.White;
+            DoctorGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DoctorGV.Location = new Point(462, 201);
+            DoctorGV.Name = "DoctorGV";
+            DoctorGV.RowHeadersWidth = 51;
+            DoctorGV.Size = new Size(499, 420);
+            DoctorGV.TabIndex = 5;
             // 
             // button1
             // 
@@ -157,6 +157,7 @@
             button1.TabIndex = 6;
             button1.Text = "Add";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -224,19 +225,20 @@
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(dataGridView1);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(DoctorGV);
+            Controls.Add(DocPass);
+            Controls.Add(DocExp);
+            Controls.Add(DocName);
+            Controls.Add(DocId);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "DoctorForm";
             Text = "DoctorForm";
+            Load += DoctorForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DoctorGV).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -247,11 +249,11 @@
         private Label label1;
         private PictureBox pictureBox1;
         private Label label2;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private DataGridView dataGridView1;
+        private TextBox DocId;
+        private TextBox DocName;
+        private TextBox DocExp;
+        private TextBox DocPass;
+        private DataGridView DoctorGV;
         private Button button1;
         private Button button2;
         private Button button3;
