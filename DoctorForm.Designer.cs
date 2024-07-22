@@ -140,9 +140,11 @@
             DoctorGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DoctorGV.Location = new Point(462, 201);
             DoctorGV.Name = "DoctorGV";
+            DoctorGV.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             DoctorGV.RowHeadersWidth = 51;
             DoctorGV.Size = new Size(499, 420);
             DoctorGV.TabIndex = 5;
+            DoctorGV.CellContentClick += DoctorGV_CellContentClick;
             // 
             // button1
             // 
@@ -172,6 +174,7 @@
             button2.TabIndex = 7;
             button2.Text = "Update";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -186,6 +189,7 @@
             button3.TabIndex = 8;
             button3.Text = "Delete";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button4
             // 

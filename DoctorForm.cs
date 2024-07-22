@@ -13,7 +13,6 @@ namespace HMS_Hospital_Managment_System_
 {
     public partial class DoctorForm : Form
     {
-        SqlConnection Con = new SqlConnection();
         public DoctorForm()
         {
             InitializeComponent();
@@ -64,6 +63,46 @@ namespace HMS_Hospital_Managment_System_
         private void DoctorForm_Load(object sender, EventArgs e)
         {
             populate();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (DocId.Text == "" || DocId.Text == "Doctor Id")
+            {
+                MessageBox.Show("Enter the Doctor id");
+            }
+            else
+            {
+                Con.Open();
+                string query = "delete from DoctorTbl where DocId=" + DocId.Text + "";
+                SqlCommand cmd = new SqlCommand(query, Con);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Doctor Successfully Deleted");
+                Con.Close();
+                populate();
+            }
+        }
+
+        private void DoctorGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            /*DocId.Text = DoctorGV.SelectedRows[0].Cells[0].Value.ToString();
+            DocName.Text = DoctorGV.SelectedRows[0].Cells[1].Value.ToString();
+            DocExp.Text = DoctorGV.SelectedRows[0].Cells[2].Value.ToString();
+            DocPass.Text = DoctorGV.SelectedRows[0].Cells[3].Value.ToString();*/
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Con.Open();
+            string query = "UPDATE DoctorTbl SET DocName = '" + DocName.Text + "', DocExp = '" + DocExp.Text + "', DocPass = '" + DocPass.Text + "' WHERE DocId = " + DocId.Text;
+            SqlCommand cmd = new SqlCommand(query, Con);
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Doctor successfully updated");
+            Con.Close();
+            populate();
+
         }
     }
 }
