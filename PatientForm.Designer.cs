@@ -33,15 +33,15 @@
             label2 = new Label();
             pictureBox1 = new PictureBox();
             label1 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
-            textBox6 = new TextBox();
-            dataGridView1 = new DataGridView();
+            PatName = new TextBox();
+            PatId = new TextBox();
+            PatAd = new TextBox();
+            PatPhone = new TextBox();
+            PatAge = new TextBox();
+            GenderCb = new ComboBox();
+            BloodCb = new ComboBox();
+            MajorTb = new TextBox();
+            PatientGV = new DataGridView();
             button4 = new Button();
             button3 = new Button();
             button2 = new Button();
@@ -49,7 +49,7 @@
             label3 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PatientGV).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -97,98 +97,98 @@
             label1.TabIndex = 1;
             label1.Text = "Hospital Managment System";
             // 
-            // textBox1
+            // PatName
             // 
-            textBox1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.ForeColor = Color.Purple;
-            textBox1.Location = new Point(76, 221);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(214, 30);
-            textBox1.TabIndex = 2;
-            textBox1.Text = "Patient Name";
+            PatName.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            PatName.ForeColor = Color.Purple;
+            PatName.Location = new Point(76, 221);
+            PatName.Name = "PatName";
+            PatName.Size = new Size(214, 30);
+            PatName.TabIndex = 2;
+            PatName.Text = "Patient Name";
             // 
-            // textBox2
+            // PatId
             // 
-            textBox2.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.ForeColor = Color.Purple;
-            textBox2.Location = new Point(76, 185);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(214, 30);
-            textBox2.TabIndex = 3;
-            textBox2.Text = "Patient Id";
-            textBox2.TextChanged += textBox2_TextChanged;
+            PatId.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            PatId.ForeColor = Color.Purple;
+            PatId.Location = new Point(76, 185);
+            PatId.Name = "PatId";
+            PatId.Size = new Size(214, 30);
+            PatId.TabIndex = 3;
+            PatId.Text = "Patient Id";
+            PatId.TextChanged += textBox2_TextChanged;
             // 
-            // textBox3
+            // PatAd
             // 
-            textBox3.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.ForeColor = Color.Purple;
-            textBox3.Location = new Point(76, 257);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(214, 30);
-            textBox3.TabIndex = 4;
-            textBox3.Text = "Patient Address";
+            PatAd.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            PatAd.ForeColor = Color.Purple;
+            PatAd.Location = new Point(76, 257);
+            PatAd.Name = "PatAd";
+            PatAd.Size = new Size(214, 30);
+            PatAd.TabIndex = 4;
+            PatAd.Text = "Patient Address";
             // 
-            // textBox4
+            // PatPhone
             // 
-            textBox4.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox4.ForeColor = Color.Purple;
-            textBox4.Location = new Point(76, 293);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(214, 30);
-            textBox4.TabIndex = 5;
-            textBox4.Text = "Patient Phone";
+            PatPhone.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            PatPhone.ForeColor = Color.Purple;
+            PatPhone.Location = new Point(76, 293);
+            PatPhone.Name = "PatPhone";
+            PatPhone.Size = new Size(214, 30);
+            PatPhone.TabIndex = 5;
+            PatPhone.Text = "Patient Phone";
             // 
-            // textBox5
+            // PatAge
             // 
-            textBox5.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox5.ForeColor = Color.Purple;
-            textBox5.Location = new Point(76, 329);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(214, 30);
-            textBox5.TabIndex = 6;
-            textBox5.Text = "Patient Age";
+            PatAge.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            PatAge.ForeColor = Color.Purple;
+            PatAge.Location = new Point(76, 329);
+            PatAge.Name = "PatAge";
+            PatAge.Size = new Size(214, 30);
+            PatAge.TabIndex = 6;
+            PatAge.Text = "Patient Age";
             // 
-            // comboBox1
+            // GenderCb
             // 
-            comboBox1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Male", "Female" });
-            comboBox1.Location = new Point(76, 365);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(214, 33);
-            comboBox1.TabIndex = 7;
-            comboBox1.Text = "Gender";
+            GenderCb.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            GenderCb.FormattingEnabled = true;
+            GenderCb.Items.AddRange(new object[] { "Male", "Female" });
+            GenderCb.Location = new Point(76, 365);
+            GenderCb.Name = "GenderCb";
+            GenderCb.Size = new Size(214, 33);
+            GenderCb.TabIndex = 7;
+            GenderCb.Text = "Gender";
             // 
-            // comboBox2
+            // BloodCb
             // 
-            comboBox2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "A+", "O+", "B+", "AB+", "A-", "O-", "B-", "AB-" });
-            comboBox2.Location = new Point(76, 404);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(214, 33);
-            comboBox2.TabIndex = 8;
-            comboBox2.Text = "Blood Group";
+            BloodCb.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            BloodCb.FormattingEnabled = true;
+            BloodCb.Items.AddRange(new object[] { "A+", "O+", "B+", "AB+", "A-", "O-", "B-", "AB-" });
+            BloodCb.Location = new Point(76, 404);
+            BloodCb.Name = "BloodCb";
+            BloodCb.Size = new Size(214, 33);
+            BloodCb.TabIndex = 8;
+            BloodCb.Text = "Blood Group";
             // 
-            // textBox6
+            // MajorTb
             // 
-            textBox6.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox6.ForeColor = Color.Purple;
-            textBox6.Location = new Point(76, 443);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(214, 30);
-            textBox6.TabIndex = 9;
-            textBox6.Text = "Major Disease";
+            MajorTb.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            MajorTb.ForeColor = Color.Purple;
+            MajorTb.Location = new Point(76, 443);
+            MajorTb.Name = "MajorTb";
+            MajorTb.Size = new Size(214, 30);
+            MajorTb.TabIndex = 9;
+            MajorTb.Text = "Major Disease";
             // 
-            // dataGridView1
+            // PatientGV
             // 
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(461, 185);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(499, 420);
-            dataGridView1.TabIndex = 10;
+            PatientGV.BackgroundColor = Color.White;
+            PatientGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            PatientGV.Location = new Point(461, 185);
+            PatientGV.Name = "PatientGV";
+            PatientGV.RowHeadersWidth = 51;
+            PatientGV.Size = new Size(499, 420);
+            PatientGV.TabIndex = 10;
             // 
             // button4
             // 
@@ -218,6 +218,7 @@
             button3.TabIndex = 13;
             button3.Text = "Delete";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -232,6 +233,7 @@
             button2.TabIndex = 12;
             button2.Text = "Update";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -271,23 +273,24 @@
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(dataGridView1);
-            Controls.Add(textBox6);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(PatientGV);
+            Controls.Add(MajorTb);
+            Controls.Add(BloodCb);
+            Controls.Add(GenderCb);
+            Controls.Add(PatAge);
+            Controls.Add(PatPhone);
+            Controls.Add(PatAd);
+            Controls.Add(PatId);
+            Controls.Add(PatName);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "PatientForm";
             Text = "PatientForm";
+            Load += PatientForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PatientGV).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -298,15 +301,15 @@
         private Label label2;
         private PictureBox pictureBox1;
         private Label label1;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
-        private TextBox textBox6;
-        private DataGridView dataGridView1;
+        private TextBox PatName;
+        private TextBox PatId;
+        private TextBox PatAd;
+        private TextBox PatPhone;
+        private TextBox PatAge;
+        private ComboBox GenderCb;
+        private ComboBox BloodCb;
+        private TextBox MajorTb;
+        private DataGridView PatientGV;
         private Button button4;
         private Button button3;
         private Button button2;
