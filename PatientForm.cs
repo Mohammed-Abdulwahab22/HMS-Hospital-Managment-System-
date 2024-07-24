@@ -89,12 +89,20 @@ namespace HMS_Hospital_Managment_System_
         private void button2_Click(object sender, EventArgs e)
         {
             Con.Open();
-            string query = "UPDATE PatientTbl SET PatName = '" + PatName.Text + "', PatAddress = '" + PatAd.Text + "',PatPhone = '"+PatPhone.Text+"', PatAge = '" + PatAge.Text + "' ,PatGender = '"+ GenderCb.SelectedItem.ToString() +"',PatBlood = '"+BloodCb.SelectedItem.ToString()+"',PatDisease = '"+MajorTb.Text+"' WHERE PatId = " + PatId.Text;
+            string query = "UPDATE PatientTbl SET PatName = '" + PatName.Text + "', PatAddress = '" + PatAd.Text + "',PatPhone = '" + PatPhone.Text + "', PatAge = '" + PatAge.Text + "' ,PatGender = '" + GenderCb.SelectedItem.ToString() + "',PatBlood = '" + BloodCb.SelectedItem.ToString() + "',PatDisease = '" + MajorTb.Text + "' WHERE PatId = " + PatId.Text;
             SqlCommand cmd = new SqlCommand(query, Con);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Patient successfully updated");
             Con.Close();
             populate();
+        }
+
+        private void PatientGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           /* PatId.Text = PatientGV.SelectedRows[0].Cells[0].Value.ToString();
+            PatName.Text = PatientGV.SelectedRows[0].Cells[1].Value.ToString();
+            PatAd.Text = PatientGV.SelectedRows[0].Cells[2].Value.ToString();
+            PatAge.Text = PatientGV.SelectedRows[0].Cells[3].Value.ToString();*/
         }
     }
 }

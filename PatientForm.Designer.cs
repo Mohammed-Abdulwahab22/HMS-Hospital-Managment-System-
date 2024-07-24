@@ -189,6 +189,7 @@
             PatientGV.RowHeadersWidth = 51;
             PatientGV.Size = new Size(499, 420);
             PatientGV.TabIndex = 10;
+            PatientGV.CellContentClick += PatientGV_CellContentClick;
             // 
             // button4
             // 
