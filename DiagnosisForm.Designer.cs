@@ -33,7 +33,7 @@
             label2 = new Label();
             pictureBox1 = new PictureBox();
             label1 = new Label();
-            PatientIdTb = new ComboBox();
+            PatientIdCb = new ComboBox();
             MedicineTb = new TextBox();
             DiagnosisTb = new TextBox();
             PatientTb = new TextBox();
@@ -45,24 +45,29 @@
             button1 = new Button();
             DiagnosisGV = new DataGridView();
             label3 = new Label();
-            panel2 = new Panel();
+            diagsummary = new Panel();
             pictureBox2 = new PictureBox();
             label9 = new Label();
-            label8 = new Label();
-            label7 = new Label();
-            label6 = new Label();
-            label5 = new Label();
+            medicineslbl = new Label();
+            Symptomslbl = new Label();
+            Diagnosislbl = new Label();
+            PatientNamelbl = new Label();
             label4 = new Label();
+            button5 = new Button();
+            printDocument1 = new System.Drawing.Printing.PrintDocument();
+            printPreviewDialog1 = new PrintPreviewDialog();
+            label5 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DiagnosisGV).BeginInit();
-            panel2.SuspendLayout();
+            diagsummary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.Purple;
+            panel1.Controls.Add(label5);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label1);
@@ -105,17 +110,17 @@
             label1.TabIndex = 1;
             label1.Text = "Hospital Managment System";
             // 
-            // PatientIdTb
+            // PatientIdCb
             // 
-            PatientIdTb.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            PatientIdTb.FormattingEnabled = true;
-            PatientIdTb.Items.AddRange(new object[] { "Male", "Female" });
-            PatientIdTb.Location = new Point(25, 214);
-            PatientIdTb.Name = "PatientIdTb";
-            PatientIdTb.Size = new Size(214, 33);
-            PatientIdTb.TabIndex = 13;
-            PatientIdTb.Text = "Patient Id";
-            PatientIdTb.SelectionChangeCommitted += PatientIdTb_SelectionChangeCommitted;
+            PatientIdCb.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            PatientIdCb.FormattingEnabled = true;
+            PatientIdCb.Items.AddRange(new object[] { "Male", "Female" });
+            PatientIdCb.Location = new Point(25, 214);
+            PatientIdCb.Name = "PatientIdCb";
+            PatientIdCb.Size = new Size(214, 33);
+            PatientIdCb.TabIndex = 13;
+            PatientIdCb.Text = "Patient Id";
+            PatientIdCb.SelectionChangeCommitted += PatientIdTb_SelectionChangeCommitted;
             // 
             // MedicineTb
             // 
@@ -211,6 +216,7 @@
             button2.TabIndex = 16;
             button2.Text = "Update";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -236,6 +242,7 @@
             DiagnosisGV.RowHeadersWidth = 51;
             DiagnosisGV.Size = new Size(931, 224);
             DiagnosisGV.TabIndex = 19;
+            DiagnosisGV.CellContentClick += DiagnosisGV_CellContentClick;
             // 
             // label3
             // 
@@ -249,19 +256,19 @@
             label3.TabIndex = 20;
             label3.Text = "Diagnosis List";
             // 
-            // panel2
+            // diagsummary
             // 
-            panel2.Controls.Add(pictureBox2);
-            panel2.Controls.Add(label9);
-            panel2.Controls.Add(label8);
-            panel2.Controls.Add(label7);
-            panel2.Controls.Add(label6);
-            panel2.Controls.Add(label5);
-            panel2.Controls.Add(label4);
-            panel2.Location = new Point(494, 128);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(559, 359);
-            panel2.TabIndex = 21;
+            diagsummary.Controls.Add(pictureBox2);
+            diagsummary.Controls.Add(label9);
+            diagsummary.Controls.Add(medicineslbl);
+            diagsummary.Controls.Add(Symptomslbl);
+            diagsummary.Controls.Add(Diagnosislbl);
+            diagsummary.Controls.Add(PatientNamelbl);
+            diagsummary.Controls.Add(label4);
+            diagsummary.Location = new Point(494, 128);
+            diagsummary.Name = "diagsummary";
+            diagsummary.Size = new Size(559, 359);
+            diagsummary.TabIndex = 21;
             // 
             // pictureBox2
             // 
@@ -286,53 +293,53 @@
             label9.TabIndex = 10;
             label9.Text = "Date";
             // 
-            // label8
+            // medicineslbl
             // 
-            label8.AutoSize = true;
-            label8.BackColor = Color.Transparent;
-            label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.ForeColor = Color.Blue;
-            label8.Location = new Point(320, 210);
-            label8.Name = "label8";
-            label8.Size = new Size(100, 28);
-            label8.TabIndex = 9;
-            label8.Text = "Medicines";
+            medicineslbl.AutoSize = true;
+            medicineslbl.BackColor = Color.Transparent;
+            medicineslbl.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            medicineslbl.ForeColor = Color.Blue;
+            medicineslbl.Location = new Point(320, 210);
+            medicineslbl.Name = "medicineslbl";
+            medicineslbl.Size = new Size(100, 28);
+            medicineslbl.TabIndex = 9;
+            medicineslbl.Text = "Medicines";
             // 
-            // label7
+            // Symptomslbl
             // 
-            label7.AutoSize = true;
-            label7.BackColor = Color.Transparent;
-            label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.Blue;
-            label7.Location = new Point(21, 210);
-            label7.Name = "label7";
-            label7.Size = new Size(105, 28);
-            label7.TabIndex = 8;
-            label7.Text = "Symptoms";
+            Symptomslbl.AutoSize = true;
+            Symptomslbl.BackColor = Color.Transparent;
+            Symptomslbl.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Symptomslbl.ForeColor = Color.Blue;
+            Symptomslbl.Location = new Point(21, 210);
+            Symptomslbl.Name = "Symptomslbl";
+            Symptomslbl.Size = new Size(105, 28);
+            Symptomslbl.TabIndex = 8;
+            Symptomslbl.Text = "Symptoms";
             // 
-            // label6
+            // Diagnosislbl
             // 
-            label6.AutoSize = true;
-            label6.BackColor = Color.Transparent;
-            label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.Blue;
-            label6.Location = new Point(310, 74);
-            label6.Name = "label6";
-            label6.Size = new Size(97, 28);
-            label6.TabIndex = 7;
-            label6.Text = "Diagnosis";
+            Diagnosislbl.AutoSize = true;
+            Diagnosislbl.BackColor = Color.Transparent;
+            Diagnosislbl.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Diagnosislbl.ForeColor = Color.Blue;
+            Diagnosislbl.Location = new Point(310, 74);
+            Diagnosislbl.Name = "Diagnosislbl";
+            Diagnosislbl.Size = new Size(97, 28);
+            Diagnosislbl.TabIndex = 7;
+            Diagnosislbl.Text = "Diagnosis";
             // 
-            // label5
+            // PatientNamelbl
             // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.Blue;
-            label5.Location = new Point(21, 74);
-            label5.Name = "label5";
-            label5.Size = new Size(129, 28);
-            label5.TabIndex = 6;
-            label5.Text = "Patient Name";
+            PatientNamelbl.AutoSize = true;
+            PatientNamelbl.BackColor = Color.Transparent;
+            PatientNamelbl.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            PatientNamelbl.ForeColor = Color.Blue;
+            PatientNamelbl.Location = new Point(21, 74);
+            PatientNamelbl.Name = "PatientNamelbl";
+            PatientNamelbl.Size = new Size(129, 28);
+            PatientNamelbl.TabIndex = 6;
+            PatientNamelbl.Text = "Patient Name";
             // 
             // label4
             // 
@@ -346,19 +353,63 @@
             label4.TabIndex = 5;
             label4.Text = "Diagnosis Summary";
             // 
+            // button5
+            // 
+            button5.BackColor = Color.Purple;
+            button5.FlatAppearance.BorderSize = 0;
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button5.ForeColor = Color.WhiteSmoke;
+            button5.Location = new Point(688, 486);
+            button5.Name = "button5";
+            button5.Size = new Size(109, 39);
+            button5.TabIndex = 22;
+            button5.Text = "Print";
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
+            // 
+            // printDocument1
+            // 
+            printDocument1.PrintPage += printDocument1_PrintPage;
+            // 
+            // printPreviewDialog1
+            // 
+            printPreviewDialog1.AutoScrollMargin = new Size(0, 0);
+            printPreviewDialog1.AutoScrollMinSize = new Size(0, 0);
+            printPreviewDialog1.ClientSize = new Size(400, 300);
+            printPreviewDialog1.Document = printDocument1;
+            printPreviewDialog1.Enabled = true;
+            printPreviewDialog1.Icon = (Icon)resources.GetObject("printPreviewDialog1.Icon");
+            printPreviewDialog1.Name = "printPreviewDialog1";
+            printPreviewDialog1.Visible = false;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = SystemColors.Desktop;
+            label5.Location = new Point(949, 34);
+            label5.Name = "label5";
+            label5.Size = new Size(49, 54);
+            label5.TabIndex = 8;
+            label5.Text = "X";
+            label5.Click += label5_Click;
+            // 
             // DiagnosisForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1065, 767);
-            Controls.Add(panel2);
+            Controls.Add(button5);
+            Controls.Add(diagsummary);
             Controls.Add(label3);
             Controls.Add(DiagnosisGV);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(PatientIdTb);
+            Controls.Add(PatientIdCb);
             Controls.Add(MedicineTb);
             Controls.Add(DiagnosisTb);
             Controls.Add(PatientTb);
@@ -373,8 +424,8 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)DiagnosisGV).EndInit();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            diagsummary.ResumeLayout(false);
+            diagsummary.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -386,7 +437,7 @@
         private Label label2;
         private PictureBox pictureBox1;
         private Label label1;
-        private ComboBox PatientIdTb;
+        private ComboBox PatientIdCb;
         private TextBox MedicineTb;
         private TextBox DiagnosisTb;
         private TextBox PatientTb;
@@ -398,13 +449,17 @@
         private Button button1;
         private DataGridView DiagnosisGV;
         private Label label3;
-        private Panel panel2;
+        private Panel diagsummary;
         private Label label4;
         private Label label9;
-        private Label label8;
-        private Label label7;
-        private Label label6;
-        private Label label5;
+        private Label medicineslbl;
+        private Label Symptomslbl;
+        private Label Diagnosislbl;
+        private Label PatientNamelbl;
         private PictureBox pictureBox2;
+        private Button button5;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private PrintPreviewDialog printPreviewDialog1;
+        private Label label5;
     }
 }

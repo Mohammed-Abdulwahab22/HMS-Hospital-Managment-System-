@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Data;
 using System.Data.SqlClient;
 
 namespace HMS_Hospital_Managment_System_
@@ -33,8 +23,8 @@ namespace HMS_Hospital_Managment_System_
                 dt.Columns.Add("PatId", typeof(int));
                 rdr = cmd.ExecuteReader();
                 dt.Load(rdr);
-                PatientIdTb.ValueMember = "PatId";
-                PatientIdTb.DataSource = dt;
+                PatientIdCb.ValueMember = "PatId";
+                PatientIdCb.DataSource = dt;
                 Con.Close();
             }
             catch
@@ -58,7 +48,7 @@ namespace HMS_Hospital_Managment_System_
         void fetchpatientname()
         {
             Con.Open();
-            string mysql = "select * from PatientTbl where PatId=" + PatientIdTb.SelectedValue.ToString() + "";
+            string mysql = "select * from PatientTbl where PatId=" + PatientIdCb.SelectedValue.ToString() + "";
             SqlCommand cmd = new SqlCommand(mysql, Con);
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -89,7 +79,7 @@ namespace HMS_Hospital_Managment_System_
 
 
                 Con.Open();
-                string query = "insert into DiagnosisTbl values(" + DiagId.Text + ",'" + PatientIdTb.SelectedValue.ToString() + "','" + PatientTb.Text + "','" + SymptomsTb.Text + "', '" + DiagnosisTb.Text + "','" + MedicineTb.Text + "' )";
+                string query = "insert into DiagnosisTbl values(" + DiagId.Text + ",'" + PatientIdCb.SelectedValue.ToString() + "','" + PatientTb.Text + "','" + SymptomsTb.Text + "', '" + DiagnosisTb.Text + "','" + MedicineTb.Text + "' )";
                 SqlCommand cmd = new SqlCommand(query, Con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Diagnosis Successfully Added");
@@ -125,6 +115,50 @@ namespace HMS_Hospital_Managment_System_
                 Con.Close();
                 populate();
             }
+        }
+
+        private void DiagnosisGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DiagId.Text = DiagnosisGV.CurrentRow.Cells[0].Value.ToString();
+            PatientIdCb.SelectedValue = DiagnosisGV.CurrentRow.Cells[1].Value.ToString();
+            PatientTb.Text = DiagnosisGV.CurrentRow.Cells[2].Value.ToString();
+            SymptomsTb.Text = DiagnosisGV.CurrentRow.Cells[3].Value.ToString();
+            DiagnosisTb.Text = DiagnosisGV.CurrentRow.Cells[4].Value.ToString();
+            MedicineTb.Text = DiagnosisGV.CurrentRow.Cells[5].Value.ToString();
+            PatientNamelbl.Text = DiagnosisGV.CurrentRow.Cells[2].Value.ToString();
+            Diagnosislbl.Text = DiagnosisGV.CurrentRow.Cells[4].Value.ToString();
+            Symptomslbl.Text = DiagnosisGV.CurrentRow.Cells[3].Value.ToString();
+            medicineslbl.Text = DiagnosisGV.CurrentRow.Cells[5].Value.ToString();
+            populate();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Con.Open();
+            string query = "UPDATE DiagnosisTbl SET PatId = '" + PatientIdCb.SelectedValue.ToString() + "', PatName = '" + PatientTb.Text + "', Symptoms = '" + SymptomsTb.Text + "',Diagnosis = '" + DiagnosisTb.Text + "',Medicines = '" + MedicineTb.Text + "' WHERE DiagId = " + DiagId.Text;
+            SqlCommand cmd = new SqlCommand(query, Con);
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Diagnosis successfully updated");
+            Con.Close();
+            populate();
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawString(label4.Text + "\n" + PatientNamelbl.Text + "\n" + Diagnosislbl.Text + "\n" + Symptomslbl.Text + "\n" + medicineslbl.Text, new Font("Century Gothic", 30, FontStyle.Bold), Brushes.Red, new Point(230));
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (printPreviewDialog1.ShowDialog() == DialogResult.OK)
+            {
+                printDocument1.Print();
+            }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

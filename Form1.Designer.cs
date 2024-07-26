@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             button1 = new Button();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             label2 = new Label();
-            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -48,6 +48,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(405, 100);
             panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(134, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(125, 76);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 2;
+            pictureBox1.TabStop = false;
             // 
             // button1
             // 
@@ -82,6 +93,7 @@
             textBox2.Location = new Point(96, 248);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
+            textBox2.PasswordChar = '*';
             textBox2.PlaceholderText = "Password";
             textBox2.Size = new Size(213, 34);
             textBox2.TabIndex = 3;
@@ -97,17 +109,7 @@
             label2.Size = new Size(67, 35);
             label2.TabIndex = 4;
             label2.Text = "Clear";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(134, 12);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(125, 76);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
+            label2.Click += label2_Click;
             // 
             // Form1
             // 
@@ -123,6 +125,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

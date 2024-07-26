@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SplashForm));
             pictureBox1 = new PictureBox();
             label1 = new Label();
-            progressBar1 = new ProgressBar();
+            progressBar = new ProgressBar();
             label2 = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -58,12 +60,12 @@
             label1.TabIndex = 4;
             label1.Text = "Hospital Managment System";
             // 
-            // progressBar1
+            // progressBar
             // 
-            progressBar1.Location = new Point(145, 206);
-            progressBar1.Name = "progressBar1";
-            progressBar1.Size = new Size(531, 29);
-            progressBar1.TabIndex = 6;
+            progressBar.Location = new Point(145, 206);
+            progressBar.Name = "progressBar";
+            progressBar.Size = new Size(531, 29);
+            progressBar.TabIndex = 6;
             // 
             // label2
             // 
@@ -76,6 +78,10 @@
             label2.TabIndex = 7;
             label2.Text = "By Mohammed Abdulwahab";
             // 
+            // timer1
+            // 
+            timer1.Tick += timer1_Tick;
+            // 
             // SplashForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -83,12 +89,13 @@
             BackColor = Color.Purple;
             ClientSize = new Size(800, 450);
             Controls.Add(label2);
-            Controls.Add(progressBar1);
+            Controls.Add(progressBar);
             Controls.Add(pictureBox1);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "SplashForm";
             Text = "SplashForm";
+            Load += SplashForm_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -98,7 +105,8 @@
 
         private PictureBox pictureBox1;
         private Label label1;
-        private ProgressBar progressBar1;
+        private ProgressBar progressBar;
         private Label label2;
+        private System.Windows.Forms.Timer timer1;
     }
 }

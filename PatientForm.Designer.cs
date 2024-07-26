@@ -47,6 +47,7 @@
             button2 = new Button();
             button1 = new Button();
             label3 = new Label();
+            label5 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PatientGV).BeginInit();
@@ -55,6 +56,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Purple;
+            panel1.Controls.Add(label5);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label1);
@@ -263,6 +265,19 @@
             label3.TabIndex = 15;
             label3.Text = "Patients List";
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = SystemColors.Desktop;
+            label5.Location = new Point(936, 29);
+            label5.Name = "label5";
+            label5.Size = new Size(49, 54);
+            label5.TabIndex = 16;
+            label5.Text = "X";
+            label5.Click += label5_Click;
+            // 
             // PatientForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -316,5 +331,6 @@
         private Button button2;
         private Button button1;
         private Label label3;
+        private Label label5;
     }
 }

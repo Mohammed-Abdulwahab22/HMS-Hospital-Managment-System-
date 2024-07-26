@@ -38,6 +38,8 @@
             label4 = new Label();
             pictureBox4 = new PictureBox();
             pictureBox5 = new PictureBox();
+            label5 = new Label();
+            label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -67,6 +69,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // label2
             // 
@@ -90,6 +93,7 @@
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 3;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // label3
             // 
@@ -113,6 +117,7 @@
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 5;
             pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
             // 
             // label4
             // 
@@ -149,6 +154,31 @@
             pictureBox5.TabIndex = 8;
             pictureBox5.TabStop = false;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = SystemColors.Desktop;
+            label5.Location = new Point(921, 17);
+            label5.Name = "label5";
+            label5.Size = new Size(49, 54);
+            label5.TabIndex = 9;
+            label5.Text = "X";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = Color.Transparent;
+            label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = SystemColors.Desktop;
+            label6.Location = new Point(25, 134);
+            label6.Name = "label6";
+            label6.Size = new Size(49, 54);
+            label6.TabIndex = 10;
+            label6.Text = "X";
+            label6.Click += label6_Click;
+            // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -156,6 +186,8 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1011, 657);
+            Controls.Add(label6);
+            Controls.Add(label5);
             Controls.Add(pictureBox5);
             Controls.Add(pictureBox4);
             Controls.Add(label4);
@@ -188,5 +220,7 @@
         private Label label4;
         private PictureBox pictureBox4;
         private PictureBox pictureBox5;
+        private Label label5;
+        private Label label6;
     }
 }

@@ -99,10 +99,19 @@ namespace HMS_Hospital_Managment_System_
 
         private void PatientGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           /* PatId.Text = PatientGV.SelectedRows[0].Cells[0].Value.ToString();
-            PatName.Text = PatientGV.SelectedRows[0].Cells[1].Value.ToString();
-            PatAd.Text = PatientGV.SelectedRows[0].Cells[2].Value.ToString();
-            PatAge.Text = PatientGV.SelectedRows[0].Cells[3].Value.ToString();*/
+            PatId.Text = PatientGV.CurrentRow.Cells[0].Value.ToString();
+            PatName.Text = PatientGV.CurrentRow.Cells[1].Value.ToString();
+            PatAd.Text = PatientGV.CurrentRow.Cells[2].Value.ToString();
+            PatPhone.Text = PatientGV.CurrentRow.Cells[3].Value.ToString();
+            PatAge.Text = PatientGV.CurrentRow.Cells[4].Value.ToString();
+            GenderCb.SelectedText = PatientGV.CurrentRow.Cells[5].Value.ToString();
+            BloodCb.SelectedText = PatientGV.CurrentRow.Cells[6].Value.ToString();
+            MajorTb.Text = PatientGV.CurrentRow.Cells[7].Value.ToString();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

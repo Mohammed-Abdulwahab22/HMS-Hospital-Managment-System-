@@ -86,10 +86,10 @@ namespace HMS_Hospital_Managment_System_
         private void DoctorGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            /*DocId.Text = DoctorGV.SelectedRows[0].Cells[0].Value.ToString();
-            DocName.Text = DoctorGV.SelectedRows[0].Cells[1].Value.ToString();
-            DocExp.Text = DoctorGV.SelectedRows[0].Cells[2].Value.ToString();
-            DocPass.Text = DoctorGV.SelectedRows[0].Cells[3].Value.ToString();*/
+            DocId.Text = DoctorGV.CurrentRow.Cells[0].Value.ToString();
+            DocName.Text = DoctorGV.CurrentRow.Cells[1].Value.ToString();
+            DocExp.Text = DoctorGV.CurrentRow.Cells[2].Value.ToString();
+            DocPass.Text = DoctorGV.CurrentRow.Cells[3].Value.ToString();
 
         }
 
@@ -103,6 +103,11 @@ namespace HMS_Hospital_Managment_System_
             Con.Close();
             populate();
 
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
