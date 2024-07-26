@@ -7,22 +7,10 @@ This project implements a Windows Forms application designed to manage various a
 Features:
 
 Patient Management:
-Add, edit, and view patient information (name, contact details, demographics, medical history, etc.).
-Search for patients based on various criteria.
-
-Appointment Management:
-Schedule appointments for patients with doctors.
-View and manage appointment details (date, time, doctor, patient, etc.).
+Add, edit, and view patient information .
 
 Doctor Management:
-Add, edit, and view doctor profiles (specialization, availability, contact information, etc.).
+Add, edit, and view doctor profiles .
 
-Staff Management:
-Create and manage user accounts for different staff roles (admin, doctor, nurse, receptionist, etc.) with appropriate access controls.
-
-Billing Management:
-Generate and manage patient bills based on services rendered.
-Track hospital income and expenses (consider integrating with a third-party accounting system for advanced features).
-
-Reporting:
-Generate reports on various aspects of hospital operations (patient admissions, appointments, doctor activity, etc.).
+Diagnosis Managment:
+Generate reports on patients diagnosis.
